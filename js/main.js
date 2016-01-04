@@ -102,12 +102,8 @@ function MainJsClass() {
             var insertTd = document.createElement('td');
             var firstInsertTd = document.createElement('td');
             var secondInsertTd = document.createElement('td');
-            insertTd.style.textAlign = "right";
-            insertTd.style.backgroundColor = "#8E9AE2";
-            insertTd.style.borderColor = "#8E9AE2";
-            secondInsertTd.style.textAlign = "right";
-            secondInsertTd.style.backgroundColor = "#8E9AE2";
-            secondInsertTd.style.borderColor = "#8E9AE2";
+            insertTd.className = "country_row";
+            secondInsertTd.className = "country_row" 
             secondInsertTd.appendChild(document.createTextNode(sortingCountry[n][0][config[1]]));
             insertTr.appendChild(firstInsertTd);
             insertTr.appendChild(secondInsertTd);
@@ -115,12 +111,9 @@ function MainJsClass() {
             insertTr.setAttribute("class", "city");
             for (var i = 3; i < config.length; i++) {
               var tdr = document.createElement("td");
-              tdr.style.textAlign = "right";
-              tdr.style.borderColor = "#8E9AE2";
-              tdr.style.backgroundColor = "#8E9AE2";
+              tdr.className = "country_row" 
               if (config[i] === 'bcpm') {
                 tdr.appendChild(document.createTextNode((getSum(sortingCountry[n], config[i]) / sortingCountry[n].length).toFixed(2)));
-                insertTr.appendChild(tdr);
               } else {
                 tdr.appendChild(document.createTextNode(getSum(sortingCountry[n], config[i])));
               }
